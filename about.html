@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Toyin | Kitchen & Crafts</title>
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Mobile menu fix */
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: #c44536;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+            z-index: 999;
+        }
+        
+        .nav-menu.active {
+            display: flex;
+        }
+        
+        .hamburger {
+            display: block;
+        }
+        
+        .about-story {
+            grid-template-columns: 1fr;
+        }
+        
+        .timeline-item {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-bottom {
+            width: 90% !important;
+            max-width: 500px;
+        }
+    }
+</style>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">🍽️ Toyin's Kitchen & Crafts</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="gallery-order.html">Gallery & Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>About Toyin</h1>
+        <p>The story behind the food and crafts</p>
+    </div>
+
+    <div class="container">
+        <!-- Main About Content -->
+        <div class="about-story">
+            <div class="about-image">
+                <img src="Toyin.jpeg" alt="TOYIN'S Profile">
+            </div>
+            <div class="about-text">
+                <h2>Meet Toyin</h2>
+                <p>Hello! I'm Toyin, a passionate caterer and craftswoman based in Lagos, Nigeria. For over 5 years, I've been bringing joy to celebrations through my food and handmade crafts.</p>
+                <p>What started as a small weekend business has grown into a full-service kitchen and craft studio. I personally oversee every order, ensuring that each dish is perfectly seasoned and every bead strand is carefully crafted.</p>
+                <p>My mission is simple: to make your celebrations memorable with delicious food and beautiful crafts. Whether it's a birthday party, wedding, or corporate event, I put love into everything I make.</p>
+                <a href="gallery-order.html" class="about-btn">View My Work</a>
+            </div>
+        </div>
+
+        <!-- My Journey -->
+        <div class="journey-section">
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="year">2019</div>
+                    <div class="description">Started with small chops for friends and family</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2021</div>
+                    <div class="description">Expanded to full catering for parties</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2023</div>
+                    <div class="description">Added traditional beads and cake decoration</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="year">2026</div>
+                    <div class="description">Now serving customers all over Lagos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Values -->
+        <div class="values-section">
+            <h2 class="section-title">What I Stand For</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>❤️ Quality</h3>
+                    <p>Only fresh ingredients and premium materials</p>
+                </div>
+                <div class="value-card">
+                    <h3>⏰ Punctuality</h3>
+                    <p>Always deliver on time, every time</p>
+                </div>
+                <div class="value-card">
+                    <h3>🤝 Trust</h3>
+                    <p>Your satisfaction is my priority</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="about-cta">
+            <h3>Want to work with me?</h3>
+            <p>I'd love to hear about your event</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+            <a href="gallery-order.html" class="cta-button secondary">Order Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <div style="margin: 10px;" class="footer-content">
+            <div class="footer-section">
+                <h4>Toyin's Taste & Crafts</h4>
+                <p>Bringing joy to your celebrations</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery-order.html">Gallery & Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div style="margin: 10px;" class="footer-section">
+                <h4>Contact</h4>
+                <p>📞 09013391639</p>
+                <p>📧 Toyins.kitchen@example.com</p>
+            </div>
+        </div>
+        <div style="width: 90%; max-width: 500px; height: fit-content; padding: 20px; background: linear-gradient(red, blue); margin: 10px auto; border-radius: 25px; border: solid 5px red;" class="footer-bottom">
+            <p>© 2025 Toyin's Kitchen & Crafts • Lagos, Nigeria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('navMenu').classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

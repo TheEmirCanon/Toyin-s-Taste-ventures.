@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyin's Taste | Home</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<style>
+    .footer-section{
+        margin: 10px;
+    }
+    
+    /* Mobile menu fix */
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: #c44536;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+            z-index: 999;
+        }
+        
+        .nav-menu.active {
+            display: flex;
+        }
+        
+        .hamburger {
+            display: block;
+        }
+        
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+        
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .featured-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">🍽️ Toyin's Taste</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery-order.html">Gallery & Order</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Toyin's Taste Kitchen & Crafts</h1>
+            <p>Catering • snacks • Celebration Cakes</p>
+            <p class="location">📍 Based in Lagos • Call/WhatsApp to order</p>
+            <div class="hero-buttons">
+                <a href="gallery-order.html" class="cta-button">View Our Menu</a>
+                <a href="contact.html" class="cta-button secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <div class="container">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <img src="package.jpeg" alt="package">
+                <h3>Catering</h3>
+                <p>Delicious Nigerian dishes for your events</p>
+                <a href="gallery-order.html#catering" class="card-link">View Catering Menu →</a>
+            </div>
+            <div class="featured-card">
+                <img src="jolly.jpeg" alt="snacks">
+                <h3>delicious snacks.</h3>
+                <p> snacks and dishes.</p>
+                <a href="gallery-order.html#beads" class="card-link">View Beads Collection →</a>
+            </div>
+            <div class="featured-card">
+                <img src="pink-cake.jpeg" alt="Cakes">
+                <h3>Celebration Cakes</h3>
+                <p>Custom cakes for every occasion</p>
+                <a href="gallery-order.html#cakes" class="card-link">View Cake Gallery →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div class="container">
+        <h2 class="section-title">Why Choose Toyin?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">🥘</div>
+                <h3>5+ Years Experience</h3>
+                <p>Serving Lagos with delicious food and crafts</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📞</div>
+                <h3>24/7 Customer Support</h3>
+                <p>Always available via phone or WhatsApp</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🚚</div>
+                <h3>Free Delivery</h3>
+                <p>Within Ikorodu and surrounding areas</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-section">
+        <div class="container">
+            <h2>Ready to place an order?</h2>
+            <p>Visit our Gallery & Order page to calculate your order total</p>
+            <a href="gallery-order.html" class="cta-button large">Go to Order Calculator</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Toyin's Taste</h4>
+                <p>Bringing joy to your celebrations</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery-order.html">Gallery & Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p style="font-style: italic;">📞 09013391639</p>
+                <p style="font-style: italic;">📧 Toyins.kitchen@example.com</p>
+            </div>
+        </div>
+        <div style="width: fit-content; min-height: auto; background: linear-gradient(red, blue); padding: 20px;color: white; border-radius: 18px; border: solid 3px red; border-style: dotted; font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 10px auto;"
+            class="footer-bottom">
+            <p>© 2026 Toyin's Kitchen & Crafts • Lagos, Nigeria</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Close menu when clicking a link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('navMenu').classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
